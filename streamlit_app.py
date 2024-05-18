@@ -20,7 +20,7 @@ def get_custom_model_response(messages):
     return response.choices[0].message.content
 
 # Streamlit UI setup
-st.title("Chatbot using Custom Model")
+st.title("I-Venture @ISB Chatbot")
 
 # Prompt for user input and save to chat history
 if prompt := st.chat_input("Your question"):
