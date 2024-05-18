@@ -16,7 +16,7 @@ def get_custom_model_response(messages):
     modified_messages = []
     for message in messages:
         if message["role"] == "user":
-            modified_message = {"role": "user", "content": f"{message['content']} ISB"}
+            modified_message = {"role": "user", "content": f"{message['content']} I-venture ISB"}
         else:
             modified_message = message
         modified_messages.append(modified_message)
@@ -56,7 +56,10 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] != "assis
         with st.spinner("Thinking..."):
             # Prepare the conversation history for the API request
             conversation_history = [
-                {"role": "system", "content": "You are an artificial intelligence assistant which answers questions related to I-Venture at ISB and you need to engage in a helpful, detailed, conversation with a user."}
+                {"role": "system", "content": "You are an artificial intelligence assistant which answers questions related to \
+                I-Venture at ISB or DLabs ISB from web search and you need to engage in a helpful, detailed, conversation with a user.\
+                Also list sources of answer"
+#"You are an artificial intelligence assistant which answers questions related to I-Venture at ISB and you need to engage in a helpful, detailed, conversation with a user."}
             ] + st.session_state.messages
 
             # Get the response from the custom model API
