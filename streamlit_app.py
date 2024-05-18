@@ -20,11 +20,15 @@ def get_custom_model_response(messages):
     return response.choices[0].message.content
 
 # Streamlit UI setup
-st.title("I-Venture @ISB Chatbot")
+st.title("Chatbot using Custom Model")
 
 # Prompt for user input and save to chat history
 if prompt := st.chat_input("Your question"):
-    st.session_state.messages.append({"role": "user", "content": str(prompt)})
+    prompt1=f"{prompt} ISB"
+    st.session_state.messages.append({"role": "user", "content": str(prompt1)})
+    
+    # Append "ISB" to the user's question internally
+    
 
 # Display the prior chat messages
 for message in st.session_state.messages:
