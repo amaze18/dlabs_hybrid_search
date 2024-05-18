@@ -39,7 +39,7 @@ with st.sidebar:
 
 # Prompt for user input and save to chat history
 if prompt := st.chat_input("Your question"):
-    prompt1=f"{prompt} ISB"
+    prompt1=f"{prompt} I-venture ISB"
     st.session_state.messages.append({"role": "user", "content": str(prompt1)})
     
     # Append "ISB" to the user's question internally
