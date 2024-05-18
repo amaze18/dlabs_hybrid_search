@@ -55,15 +55,11 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] != "assis
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             # Prepare the conversation history for the API request
-            conversation_history = [
-                {"role": "system", 
-                 "content": "You are an artificial intelligence assistant which answers questions related to I-Venture at ISB or DLabs ISB from web search and you need to engage in a helpful, detailed, conversation with a user. Also list sources of answer."}]  + st.session_state.messages
-            #"You are an artificial intelligence assistant which answers questions related to I-Venture at ISB and you need to engage in a helpful, detailed, conversation with a user."}
-           
-
+            conversation_history = [{"role": "system", "content": "You are an artificial intelligence assistant which answers questions related to I-Venture at ISB or DLabs ISB from web search and you need to engage in a helpful, detailed, conversation with a user. Also list sources of answer."}] + st.session_state.messages
+            #"You are an artificial intelligence assistant which answers questions related to I-Venture at ISB and 
+            #you need to engage in a helpful, detailed, conversation with a user."
             # Get the response from the custom model API
             response = get_custom_model_response(conversation_history)
-
             # Append the assistant's response to the session state
             st.session_state.messages.append({"role": "assistant", "content": response})
             st.write(response)
