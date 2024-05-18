@@ -20,7 +20,15 @@ def get_custom_model_response(messages):
     return response.choices[0].message.content
 
 # Streamlit UI setup
-st.title("Chatbot using Custom Model")
+st.title("I-Venuture @ ISB : AI Chatbot, developed by [GurukulAI](https://anupam-purwar.github.io/page/research_group.html)!! ")
+
+
+with st.sidebar:
+   
+    st.title("🤗💬I-Venuture @ ISB : AI Chatbot)
+    st.success('Access to this Gen-AI Powered Chatbot is provided by [Anupam](https://anupam-purwar.github.io/page/research_group.html)!!', icon='✅')
+    hf_email = 'anupam_purwar2019@pgp.isb.edu'
+    hf_pass = 'PASS'
 
 # Prompt for user input and save to chat history
 if prompt := st.chat_input("Your question"):
