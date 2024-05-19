@@ -33,7 +33,7 @@ st.title("I-Venuture @ ISB : AI Chatbot, developed by [GurukulAI](https://anupam
 with st.sidebar:
    
     st.title("🤗💬I-Venuture @ ISB : AI Chatbot")
-    st.success('Access to this Gen-AI Powered Chatbot is provided by [Anupam](https://anupam-purwar.github.io/page/research_group.html)!!', icon='✅')
+    st.success('Access to this Generative-AI Powered Chatbot is provided by [Anupam](https://anupam-purwar.github.io/page/research_group.html)!!', icon='✅')
     hf_email = 'anupam_purwar2019@pgp.isb.edu'
     hf_pass = 'PASS'
 
